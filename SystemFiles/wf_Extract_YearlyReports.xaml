@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1240,1814</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,1886</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>wf_Extract_ExcelDownloads_Reports_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="30">
@@ -72,7 +72,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="wf_Extract_YearlyReports" sap:VirtualizedContainerService.HintSize="1017,1749" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Entrada: contador, caminho dos arquivos e argumento com TaxID do Vendor&#xD;&#xA;Processamento: Inicia o contador em 1 e realiza um loop enquanto o count for menor ou igual a 12 (quantidade de meses) , verifica se o arquivo baixado de acordo com o taxID e mês especificado, se sim, ele extrai os dados do arquivo para uma datatable e cria num sheet no arquivo excel e atualiza o contador, se não possui o arquivo ele atualiza o contador apenas.&#xD;&#xA;" DisplayName="wf_Extract_YearlyReports" sap:VirtualizedContainerService.HintSize="1017,1821" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="var_strMontlyReports" />
       <Variable x:TypeArguments="x:Int32" Name="count" />
@@ -82,6 +82,7 @@
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Assign DisplayName="contador" sap:VirtualizedContainerService.HintSize="975,60" sap2010:WorkflowViewState.IdRef="Assign_1">
@@ -196,7 +197,7 @@
         </Sequence>
       </ui:InterruptibleDoWhile.Body>
       <ui:InterruptibleDoWhile.Condition>
-        <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="count &gt;= 1 And count &lt;=12" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
+        <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="count &lt;=12" />
       </ui:InterruptibleDoWhile.Condition>
     </ui:InterruptibleDoWhile>
   </Sequence>

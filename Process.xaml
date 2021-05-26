@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1106,1587</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,1587</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="30">
@@ -100,16 +100,26 @@
         <OutArgument x:TypeArguments="x:String" x:Key="arg_out_strTaxID">
           <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="var_strTaxID" />
         </OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="arg_in_strSystem1URL">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;System1_URL&quot;).ToString" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke wf_Acess_MenuReports_System1 workflow" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="System1\wf_Acess_MenuReports_System1.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+        <InArgument x:TypeArguments="x:String" x:Key="arg_in_strSystem1URL">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;System1_URL&quot;).ToString" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke wf_Download_MontlyReports_System1 workflow" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="System1\wf_Download_MontlyReports_System1.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="arg_in_strTaxID">[var_strTaxID]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="arg_in_strTaxID">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="var_strTaxID" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="arg_in_strSystem1URL">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;System1_URL&quot;).ToString" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke wf_Navigate_FolderDownloads workflow" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="SystemFiles\wf_Navigate_FolderDownloads.xaml">
@@ -124,7 +134,9 @@
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke wf_Return_MenuReports_System1 workflow" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="System1\wf_Return_MenuReports_System1.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+        <InArgument x:TypeArguments="x:String" x:Key="arg_in_strSystem1URL">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;System1_URL&quot;).ToString" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke wf_Upload_YearlyReport_System1 workflow" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="System1\wf_Upload_YearlyReport_System1.xaml">
@@ -138,6 +150,9 @@
         <OutArgument x:TypeArguments="x:String" x:Key="arg_out_strUploadID">
           <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="var_strUploadID" />
         </OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="arg_in_strSystem1URL">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;System1_URL&quot;).ToString" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke wf_Update_WorkItemsDetails_System1 workflow" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="System1\wf_Update_WorkItemsDetails_System1.xaml">
@@ -148,13 +163,14 @@
         <InArgument x:TypeArguments="x:String" x:Key="arg_in_strUpdateID">
           <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="var_strUploadID" />
         </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="arg_in_strSystem1URL">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;System1_URL&quot;).ToString" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke wf_Delete_MontlyReports workflow" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="SystemFiles\wf_Delete_MontlyReports.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="arg_in_strYearlyReportFile">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;C:\Users\&quot; + Environment.UserName +&quot;\Documents\UiPath\prj_Training_GenerateYearlyReport_System1\Yearly-Report-2017-&quot; + var_strTaxID +&quot;.xlsx&quot;" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="arg_in_strYearlyReportFile">["C:\Users\" + Environment.UserName +"\Documents\UiPath\prj_Training_GenerateYearlyReport_System1\Yearly-Report-2017-" + var_strTaxID +".xlsx"]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
   </Sequence>

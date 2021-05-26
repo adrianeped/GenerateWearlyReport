@@ -3,11 +3,12 @@
     <x:Property Name="arg_in_strTaxID" Type="InArgument(x:String)" />
     <x:Property Name="arg_in_strReportYearlyFile" Type="InArgument(x:String)" />
     <x:Property Name="arg_out_strUploadID" Type="OutArgument(x:String)" />
+    <x:Property Name="arg_in_strSystem1URL" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1240,2299</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,2431</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>wf_Upload_YearlyReport_System1_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
@@ -85,21 +86,22 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="wf_Upload_YearlyReport_System1" sap:VirtualizedContainerService.HintSize="509,2234" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Entrada: System 1 URL, TaxID do Vendor e caminho do Relatório anual&#xD;&#xA;&#xD;&#xA;Processamento: Acessa o site do upload do arquivo com o argumento mais caminho especificado. Preenche TaxID e seleciona ano desejado (2020), clica para subir arquivo e preenche seu caminho, seleciona e clica em Upload. Se realizado com sucesso, retorna uma mensagem com ID do Upload, que é extraído e fecha janela&#xD;&#xA;&#xD;&#xA;Saída: ID do Upload" DisplayName="wf_Upload_YearlyReport_System1" sap:VirtualizedContainerService.HintSize="509,2366" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:CommentOut sap2010:Annotation.AnnotationText="Tentativa de realizar com Modern Design" DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="467,93" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="476,2526" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="476,2486" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: ACME System 1 - Upload Yearly Report" sap:VirtualizedContainerService.HintSize="434,2434" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" Version="V1">
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: ACME System 1 - Upload Yearly Report" sap:VirtualizedContainerService.HintSize="434,2394" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" Version="V1">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
@@ -289,13 +291,13 @@
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="467,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Realizando upload do Relatório anual&quot;]" />
-    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Upload Yearly Report" sap:VirtualizedContainerService.HintSize="467,1878" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://acme-test.uipath.com/reports/upload">
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Upload Yearly Report" sap:VirtualizedContainerService.HintSize="467,1878" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[arg_in_strSystem1URL +&quot;reports/upload&quot;]">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,1777" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Do - Realiza Upload do arquivo" sap:VirtualizedContainerService.HintSize="376,1777" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>

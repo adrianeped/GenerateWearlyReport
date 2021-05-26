@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>916,753</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,825</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>wf_Insert_WorkItems_Queue_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="27">
@@ -69,13 +69,13 @@
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="wf_Insert_WorkItems_Queue" sap:VirtualizedContainerService.HintSize="452,688" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Entrada: Argumento com data table filtrada no main de acordo com especificidades por type e status&#xA;Processamento: Adiciona itens selecionados da tabela na fila (Type, WIID e Status)" DisplayName="wf_Insert_WorkItems_Queue" sap:VirtualizedContainerService.HintSize="452,760" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Adicionando itens na fila&quot;]" />
@@ -126,7 +126,7 @@
                 </scg:List>
               </ui:MultipleAssign.AssignOperations>
             </ui:MultipleAssign>
-            <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="Add a fila no orchestrator" DisplayName="Add Queue - Type, WIID and Status" sap:VirtualizedContainerService.HintSize="334,53" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="[arg_in_strQueueWorkItems]">
+            <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="Add a fila no orchestrator" DisplayName="Add Queue - Type, WIID and Status" sap:VirtualizedContainerService.HintSize="334,53" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="[arg_in_strQueueWorkItems]" Reference="[var_strWIID]">
               <ui:AddQueueItem.ItemInformation>
                 <InArgument x:TypeArguments="x:String" x:Key="TYPE">[var_strType]</InArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="STATUS">[var_strStatus]</InArgument>
